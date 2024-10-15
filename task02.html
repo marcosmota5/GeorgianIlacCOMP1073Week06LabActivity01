@@ -1,0 +1,53 @@
+<!-- 
+    COMP 1073 - Week 06 Lab 01
+    Student Id: 200564426
+    Student Name: Marcos Oliveira Mota
+    Created on: 2024-10-14 
+
+    Task 02
+    Create a web page that displays the key code and
+    key value of the last key pressed on the keyboard.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Press Display</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Titles -->
+    <h1>Key Press Display</h1>
+    <h2>Press any key to see its code and value below</h2>
+
+    <!-- Elements that has ids to hold both the key code and value -->
+    <p>Last Key Code: <span id="keyCode"></span></p>
+    <p>Last Key Value: <span id="keyValue"></span></p>
+
+    <script>
+
+        // Get the key code element with the id
+        const keyCode = document.getElementById('keyCode');
+
+        // Get the key value element with the id
+        const keyValue = document.getElementById('keyValue');
+
+        // Add an event listener for the keydown event to capture the key code and key, and then update the element by its id
+        document.addEventListener('keydown', (event) => {
+            keyCode.textContent = event.keyCode;
+            keyValue.textContent = event.key;
+        });
+    </script>
+
+</body>
+</html>
